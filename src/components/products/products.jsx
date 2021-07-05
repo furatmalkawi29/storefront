@@ -1,20 +1,31 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import changeActive from '../../redux/categories/categoriesAction'
+import {If,Then} from 'react-if'
+import Card from '../material/card'
 
 export const Products = (props) => {
   return (
     <React.Fragment>
-    <ul>
+      <If condition={props.activeCategory}>
+          <Then>
+          
+
+    <div style={{ display: 'flex' , justifyContent:"space-around" }}>
    {props.productsList.map(item =>{
      return (
-       <li key={item.name}> {item.name} | {item.price} | {item.description}</li>
+      <Card  key={item.name} image={item.image} name={item.name} />
+
        );
-     })}
-     </ul>
+      })}
+     </div>
+      </Then>
+      </If>
  </React.Fragment>
   )
 }
+
+
 
 const mapStateToProps = (state) => ({
   activeCategory: state.categories.activeCategory,

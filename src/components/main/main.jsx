@@ -4,8 +4,8 @@ import Categories from '../categories/categories'
 function Main() {
   return (
     <React.Fragment>
+      <Categories/>
      <Products/>
-     <Categories/>
     </React.Fragment>
   )
 }

@@ -1,9 +1,10 @@
 import React from 'react'
+import FootBar from '../material/foot-bar'
 
 function Footer() {
   return (
     <div>
-      &copy; Code Fellows
+      <FootBar/>
     </div>
   )
 }

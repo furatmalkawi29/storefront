@@ -1,18 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import changeActive from '../../redux/categories/categoriesAction'
+import Tabs from '../material/tab'
+import Tab from '@material-ui/core/Tab';
 
 export const Categories = (props) => {
-  console.log("active category :" + props.activeCategory)
-  
+
   return (
     <React.Fragment>
       <div>
       {props.categoriesList.map(item =>{
         return (
-          <p onClick={()=>{props.changeActive(item.name)}} key={item.name}> | {item.display}</p>
+          <Tabs style={{display:"flex"}}>
+          <Tab key={item.name} label={item.display} onClick={()=>{
+            props.changeActive(item.name)}} />
+            </Tabs>
           );
-        })}
+          })}
+        
         </div>
     </React.Fragment>
   )
