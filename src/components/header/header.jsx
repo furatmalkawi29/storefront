@@ -1,12 +1,17 @@
 import React from 'react'
-import AppBar from '../material/app-bar'
+import AppBar from '../material/header-bar'
+import {connect} from 'react-redux'
 
-function Header() {
+function Header(props) {
   return (
     <React.Fragment>
-      <AppBar/>
+      <AppBar cartCount={props.cartCount} />
     </React.Fragment>
   )
 }
 
-export default Header
+const mapStateToProps = (state) => ({
+  cartCount: state.cart.cartCount
+})
+
+export default connect (mapStateToProps)(Header)

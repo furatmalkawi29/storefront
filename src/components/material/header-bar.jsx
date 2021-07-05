@@ -23,15 +23,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProminentAppBar() {
+export default function ProminentAppBar(props) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
+     
+          <Typography className={classes.title} variant="h6" noWrap>
+            Cart({props.cartCount})
+          </Typography>
         <Toolbar className={classes.toolbar}>
-        
-          <Typography className={classes.title} variant="h3" noWrap>
+        <Typography className={classes.title} variant="h3" noWrap>
             OUR STORE
           </Typography>
         </Toolbar>
