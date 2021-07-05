@@ -2,7 +2,7 @@
 let initialState = {
  categoriesList:[{name:"food", display:"Food", description:"food shopping"},
  {name:"electronics", display:"Electronics", description:"electronics shopping"}] ,
- activeCategory: ""
+ activeCategory: false
 }
 
 function categoriesReducer(state = initialState,action) {

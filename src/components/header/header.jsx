@@ -1,10 +1,11 @@
 import React from 'react'
+import AppBar from '../material/app-bar'
 
 function Header() {
   return (
-    <div>
-      OUR STORE
-    </div>
+    <React.Fragment>
+      <AppBar/>
+    </React.Fragment>
   )
 }
 
