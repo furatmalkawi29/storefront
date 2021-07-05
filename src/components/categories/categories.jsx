@@ -9,14 +9,14 @@ export const Categories = (props) => {
   return (
     <React.Fragment>
       <div>
+      <Tabs style={{display:"flex"}}>
       {props.categoriesList.map(item =>{
         return (
-          <Tabs style={{display:"flex"}}>
           <Tab key={item.name} label={item.display} onClick={()=>{
             props.changeActive(item.name)}} />
-            </Tabs>
-          );
+            );
           })}
+          </Tabs>
         
         </div>
     </React.Fragment>
