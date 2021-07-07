@@ -7,6 +7,7 @@ export default function AlignItemsList(props) {
 
   return (
       <ListItem alignItems="flex-start">
+        {props.children}
         <ListItemText
           primary={props.name}
            />
