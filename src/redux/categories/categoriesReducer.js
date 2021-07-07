@@ -1,7 +1,6 @@
 
 let initialState = {
- categoriesList:[{name:"food", display:"Food", description:"food shopping"},
- {name:"electronics", display:"Electronics", description:"electronics shopping"}] ,
+ categoriesList:[] ,
  activeCategory: false
 }
 
@@ -13,6 +12,12 @@ function categoriesReducer(state = initialState,action) {
       ...state,
       activeCategory:action.payload
      }
+
+     case "GET_CATEGORIES_LIST":
+       return {
+         ...state,
+         categoriesList: action.payload
+       }
         
     default:
       return state;
