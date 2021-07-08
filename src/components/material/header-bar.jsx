@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +32,9 @@ export default function ProminentAppBar(props) {
       <AppBar position="static">
      
           <Typography className={classes.title} variant="h6" noWrap>
+            <Link to="/cart">
             Cart({props.cartCount})
+            </Link>
           </Typography>
         <Toolbar className={classes.toolbar}>
         <Typography className={classes.title} variant="h3" noWrap>

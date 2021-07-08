@@ -5,14 +5,17 @@ import {addApiProducts} from '../../redux/cart/cartAction'
 import {If,Then} from 'react-if'
 import Card from '../material/card'
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
 
 export const Products = (props) => {
+
+  console.log(props.productsList );
+
   return (
     <React.Fragment>
       <If condition={props.activeCategory}>
           <Then>
           
-
     <div style={{ display: 'flex' , justifyContent:"space-around" }}>
    {props.productsList.map(item =>{
      return (
@@ -22,7 +25,9 @@ export const Products = (props) => {
           ADD TO CART
         </Button>
         <Button size="small" color="primary">
-          VIEW DETAILS
+        <Link to={`/products/${item._id}`}>
+         VIEW DETAILS
+        </Link> 
         </Button>
       </Card>
        );
